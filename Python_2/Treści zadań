@@ -1,0 +1,15 @@
+1. Napisz program freq_words.py który zlicza liczbę wystąpień słów w tekście. Program powinien czytać dowolny tekst ze standardowego wejścia i wypisywać na standardowym wyjściu listę składającą się z par 'liczba wystąpień' i 'słowo' oddzielone znakiem tabulacji. Lista wynikowa powinna być posortowana po liczbie wystąpień. Słowa należy normalizować względem wielkości liter. Które 10 słów najczęściej występuje w Baśniach Braci Grimm?
+
+cat grimms.txt | python freq_words.py | head
+
+2. Napisz program ngrams.py do generowania wszystkich n-gramów słów z podanego na standardowym wejściu stokenizowanego tekstu. N-gramem nazywamy ciąg występujących po sobie słów długości n. Program powinien wypisywać jeden n-gram w jendej linii wyjścia. Wartość n powinna być przyjmowana jako argument programu (domyślnie 3).
+
+cat grimms.txt | python ngrams.py 3
+
+3. Napisz program concordance.py, który wyszuka wszystkie linie w tekście zawierające dane słowo i wypisze je sformatowane (szukane słowo w każdej linii jedno pod drugim oddzielone dwiema spacjami z lewej i prawej strony) razem z kontekstem przed i po wyniku wyszukiwania o długości n znaków. Szukane słowo oraz wartość n powinny być podawane jako argument programu (n domyślnie 15).
+
+head -250 grimms.txt | python concordance.py have 10
+
+4. Napisz program freq_letters.py, który zlicza liczbę wystąpień liter w tekście podanym na standardowym wejściu i wypisuje je w postaci par 'litera' 'liczba wystąpień' oddzielone znakiem tabulacji. Należy zliczyć duże litery A-Z oraz małe litery a-z z alfabetu ASCII. Wyjście powinno być posortowane wg. liter w kolejności alfabetycznej.
+
+head -200 grimms.txt | python freq_letters.py
